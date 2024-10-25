@@ -1,5 +1,5 @@
 namespace _01_mvcCEP;
-
+using _01_mvcCEP.Services;
 public class Program
 {
     public static void Main(string[] args)
@@ -8,7 +8,7 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();
-
+        builder.Services.AddSingleton<ICEPServices, CEPMemoryService>();
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
